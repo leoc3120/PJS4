@@ -20,5 +20,12 @@ public class startActivity extends AppCompatActivity {
 
         connexion = findViewById(R.id.buttonConnect);
 
+        connexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gameActivityIntent = new Intent(startActivity.this, homeActivity.class);
+                startActivity(gameActivityIntent);
+            }
+        });
     }
 }
