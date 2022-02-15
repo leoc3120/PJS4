@@ -6,12 +6,11 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:textColor="@color/design_default_color_error"
-        />
+        android:text="Connectez-vous" />
 
     <Button
         android:id="@+id/button5"
@@ -19,6 +18,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Créez un compte" />
-
 
 </LinearLayout>
