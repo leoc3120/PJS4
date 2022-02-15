@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PJS4">
         <activity
-            android:name=".MainActivity"
+            android:name=".homeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".startActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
