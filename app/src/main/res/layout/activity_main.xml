@@ -26,6 +26,7 @@
         android:id="@+id/buttonCreateAccount"
         style="?attr/materialButtonOutlinedStyle"
         app:strokeColor="@color/black"
+        app:strokeWidth="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Créez un compte" />
