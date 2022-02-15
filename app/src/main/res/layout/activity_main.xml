@@ -20,7 +20,8 @@
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Connectez-vous" />
+        android:text="Connectez-vous"
+        android:layout_marginHorizontal="100px"/>
 
     <Button
         android:id="@+id/buttonCreateAccount"
@@ -29,6 +30,7 @@
         app:strokeWidth="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Créez un compte" />
+        android:text="Créez un compte"
+        android:layout_marginHorizontal="100px"/>/>
 
 </LinearLayout>
