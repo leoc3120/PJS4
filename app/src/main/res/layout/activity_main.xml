@@ -8,21 +8,24 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageHome"
         android:layout_width="match_parent"
         android:layout_height="405dp"
+        android:contentDescription="TODO"
         tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@drawable/imageHome" />
+        android:src="@drawable/imagehome" />
 
     <Button
-        style="?android:attr/buttonBarButtonStyle"
+        android:id="@+id/buttonConnect"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Connectez-vous" />
 
     <Button
-        android:id="@+id/button5"
-        style="?android:attr/buttonBarButtonStyle"
+        android:id="@+id/buttonCreateAccount"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Créez un compte" />
