@@ -2,11 +2,11 @@
     <item
         android:id="@+id/page_1"
         android:enabled="true"
-        android:icon="@drawable/imagehome"
+        android:icon="@drawable/profile_icon"
         android:title="n1"/>
     <item
         android:id="@+id/page_2"
         android:enabled="true"
-        android:icon="@drawable/easyfitlogo"
+        android:icon="@drawable/profile_icon"
         android:title="n2"/>
 </menu>
