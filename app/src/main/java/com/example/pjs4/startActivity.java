@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class startActivity extends AppCompatActivity {
-
-    private Button connexion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +14,17 @@ public class startActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
 
+        Button connexion = findViewById(R.id.buttonConnect);
+        Button inscription = findViewById(R.id.buttonCreateAccount);
 
-        connexion = findViewById(R.id.buttonConnect);
+        connexion.setOnClickListener(v -> {
+            Intent connexionActivityIntent = new Intent(startActivity.this, connexionActivity.class);
+            startActivity(connexionActivityIntent);
+        });
 
-        connexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent connexionActivityIntent = new Intent(startActivity.this, connexionActivity.class);
-                startActivity(connexionActivityIntent);
-            }
+        inscription.setOnClickListener(v -> {
+            Intent inscriptionActivityIntent = new Intent(startActivity.this, inscriptionActivity.class);
+            startActivity(inscriptionActivityIntent);
         });
     }
 }

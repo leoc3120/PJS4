@@ -12,4 +12,7 @@
     <string name="btn_create_account">Créez un compte</string>
     <string name="btn_connect">Connectez-vous!</string>
     <string name="sports">sports</string>
+    <string name="inscription"><b>Inscription</b></string>
+    <string name="surname_input">Entre ici ton nom de famille</string>
+    <string name="name_input">Entre ici ton prénom</string>
 </resources>
