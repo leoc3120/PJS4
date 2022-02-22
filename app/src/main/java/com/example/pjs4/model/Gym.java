@@ -14,6 +14,8 @@ public class Gym {
         this.lieuGym = lieuGym;
         this.imageGym = imageGym;
         this.handiSport = handiSport;
+
+
     }
 
     public String getNomGym() {
