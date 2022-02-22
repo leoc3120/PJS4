@@ -2,11 +2,22 @@
     <item
         android:id="@+id/page_1"
         android:enabled="true"
-        android:icon="@drawable/profile_icon"
-        android:title="n1"/>
+        android:icon="@drawable/home"
+        android:title="Accueil"/>
+
     <item
         android:id="@+id/page_2"
         android:enabled="true"
-        android:icon="@drawable/profile_icon"
-        android:title="n2"/>
+        android:icon="@drawable/search"
+        android:title="Recherche"/>
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/user"
+        android:title="Profil"/>
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:icon="@drawable/settings"
+        android:title="Paramètres"/>
 </menu>
