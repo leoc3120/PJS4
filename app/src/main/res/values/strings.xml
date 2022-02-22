@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">PJS4</string>
     <string name="button_send" />
+    <string name="connexion_invitation"><b>Connexion à l\'application</b></string>
+    <string name="login_input">Entre ici ton login</string>
+    <string name="password_input">Entre ici ton mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="navSearch">Recherche</string>
+    <string name="navProfil">Profil</string>
+    <string name="navSettings">Paramètres</string>
+    <string name="navHome">Accueil</string>
+    <string name="btn_create_account">Créez un compte</string>
+    <string name="btn_connect">Connectez-vous!</string>
+    <string name="sports">sports</string>
 </resources>

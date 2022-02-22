@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="homeActivity">
+    tools:context=".homeActivity">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:text="passage réussi !" />
+        android:layout_height="wrap_content"
+        android:text="BIENVENUE SUR L'ACCUEIL !" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

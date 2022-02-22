@@ -7,24 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class startActivity extends AppCompatActivity {
+public class connexionActivity extends AppCompatActivity {
 
     private Button connexion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_connexion);
 
-
-
-        connexion = findViewById(R.id.buttonConnect);
+        connexion = findViewById(R.id.btnConnexion);
 
         connexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent connexionActivityIntent = new Intent(startActivity.this, connexionActivity.class);
-                startActivity(connexionActivityIntent);
+                Intent homeActivityIntent = new Intent(connexionActivity.this, homeActivity.class);
+                startActivity(homeActivityIntent);
             }
         });
     }
