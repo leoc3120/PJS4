@@ -25,6 +25,9 @@
             android:name=".connexionActivity"
             android:exported="false" />
         <activity
+            android:name=".settingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".homeActivity"
             android:exported="false" />
         <activity
