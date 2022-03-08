@@ -1,7 +1,12 @@
 package com.example.pjs4;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+
+import com.google.android.material.navigation.NavigationBarView;
 
 public class homeActivity extends AppCompatActivity {
 
@@ -9,5 +14,40 @@ public class homeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        NavigationBarView nav = findViewById(R.id.bottom_navigation);
+        nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                int id = item.getItemId();
+                switch(id){
+                    case R.id.btn1:
+                        Intent startActivityIntent = new Intent(homeActivity.this, startActivity.class);
+                        startActivity(startActivityIntent);
+                        break;
+
+                    case R.id.btn2:
+                        Intent searchActivityIntent = new Intent(homeActivity.this, searchActivity.class);
+                        startActivity(searchActivityIntent);;
+
+                    case R.id.btn3:
+                        Intent profileActivityIntent = new Intent(homeActivity.this, profileActivity.class);
+                        startActivity(profileActivityIntent);
+
+                    case R.id.btn4:
+                        Intent settingsActivityIntent = new Intent(homeActivity.this, settingsActivity.class);
+                        startActivity(settingsActivityIntent);
+                    default :
+                        break;
+                }
+                return true;
+            }
+        });
+
+
+
+
+
+
     }
 }
