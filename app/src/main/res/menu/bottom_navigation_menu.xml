@@ -20,4 +20,5 @@
         android:enabled="true"
         android:icon="@drawable/settings"
         android:title="@string/navSettings"/>
+
 </menu>
