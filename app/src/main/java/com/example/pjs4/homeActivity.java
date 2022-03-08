@@ -28,15 +28,18 @@ public class homeActivity extends AppCompatActivity {
 
                     case R.id.btn2:
                         Intent searchActivityIntent = new Intent(homeActivity.this, searchActivity.class);
-                        startActivity(searchActivityIntent);;
+                        startActivity(searchActivityIntent);
+                        break;
 
                     case R.id.btn3:
                         Intent profileActivityIntent = new Intent(homeActivity.this, profileActivity.class);
                         startActivity(profileActivityIntent);
+                        break;
 
                     case R.id.btn4:
                         Intent settingsActivityIntent = new Intent(homeActivity.this, settingsActivity.class);
                         startActivity(settingsActivityIntent);
+                        break;
                     default :
                         break;
                 }
