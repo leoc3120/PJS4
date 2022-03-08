@@ -3,14 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_connexion.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_home.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_inscription.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_main.xml" value="0.192481884057971" />
+        <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_settings.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.178" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/drawable/ic_launcher_background.xml" value="0.178" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_connexion.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_inscription.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_inscription.xml" value="0.1" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_profile.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_search.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_settings.xml" value="0.35144927536231885" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_start.xml" value="0.1111111111111111" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_test_java.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_test_java_atcivity.xml" value="0.36666666666666664" />
