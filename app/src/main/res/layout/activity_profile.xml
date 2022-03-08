@@ -6,4 +6,128 @@
     android:layout_height="match_parent"
     tools:context=".profileActivity">
 
+    <TextView
+        android:id="@+id/Infos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Informations personnelles"/>
+
+
+    <TextView
+        android:id="@+id/LabelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom d'utilisateur : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Infos"/>
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Infos"
+        android:text="Mesatfa Fessy"/>
+
+
+    <TextView
+        android:id="@+id/LabelPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photo de profil : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LabelName"/>
+
+    <TextView
+        android:id="@+id/Pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Name"
+        android:text="Photo"/>
+
+    <TextView
+        android:id="@+id/LabelHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taille : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LabelPic"/>
+
+    <TextView
+        android:id="@+id/Height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Pic"
+        android:text="1m68"/>
+
+    <TextView
+        android:id="@+id/LabelWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Poids : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LabelHeight"/>
+
+    <TextView
+        android:id="@+id/Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Height"
+        android:text="Mesatfa Fessy"/>
+
+    <TextView
+        android:id="@+id/LabelSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexe : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LabelWeight"/>
+
+    <TextView
+        android:id="@+id/Sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Weight"
+        android:text="Une miss world"/>
+
+    <TextView
+        android:id="@+id/LabelBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date de naissance : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LabelSex"/>
+
+    <TextView
+        android:id="@+id/Birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Sex"
+        android:text="01/01/1997"/>
+
+    <TextView
+        android:id="@+id/LabelCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pays : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LabelBirth"/>
+
+    <TextView
+        android:id="@+id/Country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Birth"
+        android:text="France"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
