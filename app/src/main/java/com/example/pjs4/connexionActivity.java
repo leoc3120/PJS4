@@ -66,7 +66,7 @@ public class connexionActivity extends AppCompatActivity {
             email.setError("Entrer un mail correct");
         } else if (mdp.isEmpty() || password.length() < 6) {
             password.setError("Entrer un mot de passe correct");
-        } else {
+        } else  {
             progressDialog.setMessage("Veuillez patientez pendant la connexion");
             progressDialog.setTitle("Connexion");
             progressDialog.setCanceledOnTouchOutside(false);
