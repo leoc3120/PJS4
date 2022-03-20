@@ -46,7 +46,6 @@ public class connexionActivity extends AppCompatActivity {
             Intent homeActivityIntent = new Intent(connexionActivity.this, com.example.pjs4.homeActivity.class);
             startActivity(homeActivityIntent);
         });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

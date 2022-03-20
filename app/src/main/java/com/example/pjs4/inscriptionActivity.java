@@ -97,7 +97,7 @@ public class inscriptionActivity extends AppCompatActivity {
     }
 
     private void sendToNextActivity() {
-        Intent intent=new Intent(inscriptionActivity.this, homeActivity.class);
+        Intent intent=new Intent(inscriptionActivity.this, connexionActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
