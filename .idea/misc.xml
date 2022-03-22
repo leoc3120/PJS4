@@ -28,9 +28,9 @@
         <entry key="..\:/Users/snekh/Documents/GitHub/PJS4/app/src/main/res/layout/activity_main.xml" value="0.14375" />
         <entry key="app/src/main/res/layout/activity_connexion.xml" value="0.19671325683593752" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.10790273556231003" />
-        <entry key="app/src/main/res/layout/activity_mot_de_passe_oublie.xml" value="0.22554347826086957" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.23291778564453125" />
+        <entry key="app/src/main/res/layout/activity_mot_de_passe_oublie.xml" value="0.31632080078125" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.248577880859375" />
       </map>
     </option>
   </component>

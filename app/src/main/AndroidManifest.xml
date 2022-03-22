@@ -25,14 +25,15 @@
             android:name=".connexionActivity"
             android:exported="false" />
         <activity
-            android:name=".settingsActivity"
+            android:name=".homeActivity"
             android:exported="false" />
         <activity
-            android:name=".homeActivity"
+            android:name=".motDePasseOublieActivity"
             android:exported="false" />
         <activity
             android:name=".startActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

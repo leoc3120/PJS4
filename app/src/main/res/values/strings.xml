@@ -15,7 +15,9 @@
     <string name="inscription"><b>Inscription</b></string>
     <string name="surname_input">Entre ici ton nom de famille</string>
     <string name="name_input">Entre ici ton prénom</string>
-    <string name="login_input" />
-    <string name="forget_your_password" />
-    <string name="sign_up" />
+    <string name="pas_de_compte">Pas de compte ?</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié ?</string>
+    <string name="se_connecter">Se connecter ?</string>
+    <string name="modifier_mon_mot_de_passe">Modifier mon mot de passe</string>
+    <string name="continuer">Continuer</string>
 </resources>

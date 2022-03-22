@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,9 +27,11 @@ public class motDePasseOublieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mot_de_passe_oublie);
-        inputEmail = (EditText) findViewById(R.id.email_address);
-        btnReset = (Button) findViewById(R.id.btn_reset_password);
+        inputEmail = findViewById(R.id.email_address);
+        btnReset =  findViewById(R.id.btn_reset_password);
         auth = FirebaseAuth.getInstance();
+
+
 
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +48,9 @@ public class motDePasseOublieActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(motDePasseOublieActivity.this, "We send you an e-mail", Toast.LENGTH_SHORT).show();
-
+                                    //Intent connexionActivityIntent = new Intent(motDePasseOublieActivity.this, connexionActivity.class);
+                                    //startActivity(connexionActivityIntent);
+                                    NavigateSignUp(v);
                                 } else {
                                     Toast.makeText(motDePasseOublieActivity.this, "Error", Toast.LENGTH_SHORT).show();
                                 }

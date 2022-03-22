@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/email_input"
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
-        android:text="Pas de compte ?"
+        android:text="@string/pas_de_compte"
         android:clickable="true"
         android:onClick="NavigateSignUp"
         android:textColor="@color/black"
@@ -72,7 +72,7 @@
         android:layout_marginTop="496dp"
         android:clickable="true"
         android:onClick="NavigateForgetMyPassword"
-        android:text="Mot de passe oublié ?"
+        android:text="@string/mot_de_passe_oubli"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

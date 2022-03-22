@@ -102,4 +102,9 @@ public class inscriptionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void NavigateSignUp(View v) {
+        Intent inent = new Intent(this, connexionActivity.class);
+        startActivity(inent);
+    }
+
 }
