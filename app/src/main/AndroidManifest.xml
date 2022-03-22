@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PJS4">
         <activity
+            android:name=".completeProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".settingsActivity"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".connexionActivity"
             android:exported="false" />
         <activity
-            android:name=".settingsActivity"
+            android:name=".motDePasseOublieActivity"
             android:exported="false" />
         <activity
             android:name=".homeActivity"
