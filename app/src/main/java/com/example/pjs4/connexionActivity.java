@@ -95,4 +95,13 @@ public class connexionActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
+    public void NavigateSignUp(View v) {
+        Intent inent = new Intent(this, inscriptionActivity.class);
+        startActivity(inent);
+    }
+    public void NavigateForgetMyPassword(View v) {
+        Intent inent = new Intent(this, motDePasseOublieActivity.class);
+        startActivity(inent);
+    }
 }

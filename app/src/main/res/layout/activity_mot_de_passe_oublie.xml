@@ -4,59 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".connexionActivity">
+    tools:context=".motDePasseOublieActivity">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titlePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connexion_invitation"
+        android:text="Modifier mon mot de passe"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="100dp"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/email_address"
         android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/email_input"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/titlePassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="100dp"
         android:autofillHints="login" />
 
-    <EditText
-        android:id="@+id/password"
-        android:inputType="textPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:hint="@string/password_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:autofillHints="password" />
-
     <Button
-        android:id="@+id/btnConnexion"
+        android:id="@+id/btn_reset_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connexion"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:text="Continuer"
+        app:layout_constraintTop_toBottomOf="@+id/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="48dp"
         />
 
     <TextView
-        android:id="@+id/notamember"
+        android:id="@+id/member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
-        android:text="Pas de compte ?"
+        android:text="Se connecter ?"
         android:clickable="true"
         android:onClick="NavigateSignUp"
         android:textColor="@color/black"
@@ -65,24 +53,5 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/forgetyourpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="496dp"
-        android:clickable="true"
-        android:onClick="NavigateForgetMyPassword"
-        android:text="Mot de passe oublié ?"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="102dp"
-        app:menu="@menu/bottom_navigation_menu"
-
-        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

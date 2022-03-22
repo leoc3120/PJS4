@@ -16,4 +16,6 @@
     <string name="surname_input">Entre ici ton nom de famille</string>
     <string name="name_input">Entre ici ton prénom</string>
     <string name="login_input" />
+    <string name="forget_your_password" />
+    <string name="sign_up" />
 </resources>
