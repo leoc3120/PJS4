@@ -20,4 +20,5 @@
     <string name="se_connecter">Se connecter ?</string>
     <string name="modifier_mon_mot_de_passe">Modifier mon mot de passe</string>
     <string name="continuer">Continuer</string>
+    <string name="d_connexion">Déconnexion</string>
 </resources>

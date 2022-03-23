@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class connexionActivity extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
 
+
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
@@ -35,6 +37,8 @@ public class connexionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_connexion);
         Button connexion = findViewById(R.id.btnConnexion);
 
+        TextView noAccount = findViewById(R.id.notamember);
+        TextView forgotPassword = findViewById(R.id.forgetyourpassword);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btnLogin = findViewById(R.id.btnConnexion);
@@ -47,6 +51,15 @@ public class connexionActivity extends AppCompatActivity {
             startActivity(homeActivityIntent);
         });
 
+        noAccount.setOnClickListener(v -> {
+            Intent noAcc = new Intent(this, inscriptionActivity.class);
+            startActivity(noAcc);
+        });
+
+        forgotPassword.setOnClickListener(v -> {
+            Intent fPwd = new Intent(this, motDePasseOublieActivity.class);
+            startActivity(fPwd);
+        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +68,7 @@ public class connexionActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void PerforLogin() {
 
@@ -97,11 +111,11 @@ public class connexionActivity extends AppCompatActivity {
     }
 
     public void NavigateSignUp(View v) {
-        Intent inent = new Intent(this, inscriptionActivity.class);
-        startActivity(inent);
+        Intent in = new Intent(this, inscriptionActivity.class);
+        startActivity(in);
     }
     public void NavigateForgetMyPassword(View v) {
-        Intent inent = new Intent(this, motDePasseOublieActivity.class);
-        startActivity(inent);
+        Intent in = new Intent(this, motDePasseOublieActivity.class);
+        startActivity(in);
     }
 }
