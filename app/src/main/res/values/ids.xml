@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="edit" type="id" />
+    <item name="header_cover_image" type="id" />
+    <item name="profile_layout" type="id" />
+    <item name="profile" type="id" />
+    <item name="designation" type="id" />
+    <item name="textView7" type="id" />
+    <item name="textView16" type="id" />
+    <item name="textView11" type="id" />
+    <item name="textView10" type="id" />
+    <item name="textView26" type="id" />
+</resources>
