@@ -18,7 +18,6 @@
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
             android:background="@drawable/img"
             android:scaleType="centerCrop"
 
@@ -104,7 +103,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:background="#fff"
-            android:backgroundTint="@color/material_dynamic_secondary"
+            android:backgroundTint="@color/browser_actions_bg_grey"
             android:elevation="4dp"
             android:orientation="vertical"
             android:paddingLeft="5dp"
