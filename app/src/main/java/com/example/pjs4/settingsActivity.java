@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class settingsActivity extends AppCompatActivity {
 
@@ -46,6 +48,12 @@ public class settingsActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void navigateLogOut(View v){
+        FirebaseAuth.getInstance().signOut();
+        Intent inent = new Intent(this, startActivity.class);
+        startActivity(inent);
     }
 
 }
