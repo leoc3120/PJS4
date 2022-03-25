@@ -21,4 +21,14 @@
     <string name="modifier_mon_mot_de_passe">Modifier mon mot de passe</string>
     <string name="continuer">Continuer</string>
     <string name="d_connexion">Déconnexion</string>
+    <string name="create_profile">create_profile</string>
+    <string name="Username">Username</string>
+    <string name="enter_your_name">enter_your_name</string>
+    <string name="Usersurname">Usersurname</string>
+    <string name="enter_your_surname">enter_your_surname</string>
+    <string name="phone_number">phone_number</string>
+    <string name="enter_your_phone_number">enter_your_phone_number</string>
+    <string name="e_mail">e_mail</string>
+    <string name="email_address">email_address</string>
+    <string name="ok">ok</string>
 </resources>

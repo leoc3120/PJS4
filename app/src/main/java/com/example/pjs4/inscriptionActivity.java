@@ -86,7 +86,7 @@ public class inscriptionActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        FirebaseUser user  = mAuth.getCurrentUser();
+                        /*FirebaseUser user  = mAuth.getCurrentUser();
 
                         String mail = user.getEmail();
                         String uid = user.getUid();
@@ -101,7 +101,7 @@ public class inscriptionActivity extends AppCompatActivity {
 
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference reference = database.getReference("Users");
-                        reference.child(uid).setValue(hashMap);
+                        reference.child(uid).setValue(hashMap);*/
                         progressDialog.dismiss();
                         sendToNextActivity();
                         Toast.makeText(inscriptionActivity.this, "Inscription réussie", Toast.LENGTH_SHORT).show();

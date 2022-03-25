@@ -3,6 +3,7 @@ package com.example.pjs4;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +52,7 @@ public class connexionActivity extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
 
         connexion.setOnClickListener(v -> {
-            Intent homeActivityIntent = new Intent(connexionActivity.this, homeActivity.class);
+            Intent homeActivityIntent = new Intent(connexionActivity.this, completeProfileActivity.class);
             startActivity(homeActivityIntent);
         });
 
@@ -73,7 +74,6 @@ public class connexionActivity extends AppCompatActivity {
 
     }
 
-
     private void PerforLogin() {
 
         String mail = email.getText().toString();
@@ -90,18 +90,28 @@ public class connexionActivity extends AppCompatActivity {
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
-            mAuth.signInWithEmailAndPassword(mail, mdp).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(mail, mdp).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if (task.isSuccessful()) {
+                        progressDialog.dismiss();
+                        sendToNextActivity();
+                        Toast.makeText(connexionActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
+                       /* boolean isNewUser = task.getResult().getAdditionalUserInfo().isNewUser();
+                        if (isNewUser) {
+                            Log.d("TAG", "Is New User!");
 
-                        FirebaseUser user  = mAuth.getCurrentUser();
 
-                        String mail = user.getEmail();
-                        String uid = user.getUid();
 
-                        HashMap<Object, String> hashMap = new HashMap<>();
+                        } else {
+                            Log.d("TAG", "Is Old User!");
+                            progressDialog.dismiss();
+                            sendToEditProfileActivity();
+                            Toast.makeText(connexionActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
+                        }*/
+
+                       /* HashMap<Object, String> hashMap = new HashMap<>();
 
                         hashMap.put("Email", mail);
                         hashMap.put("uid", uid);
@@ -111,12 +121,8 @@ public class connexionActivity extends AppCompatActivity {
 
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference reference = database.getReference("Users");
-                        reference.child(uid).setValue(hashMap);
+                        reference.child(uid).setValue(hashMap);*/
 
-
-                        progressDialog.dismiss();
-                        sendToNextActivity();
-                        Toast.makeText(connexionActivity.this, "Connexion rÃ©ussie", Toast.LENGTH_SHORT).show();
                     } else {
                         progressDialog.dismiss();
                         Toast.makeText(connexionActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
@@ -133,8 +139,14 @@ public class connexionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void sendToEditProfileActivity() {
+        Intent intent = new Intent(connexionActivity.this, completeProfileActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
     public void NavigateSignUp(View v) {
-        Intent in = new Intent(this, inscriptionActivity.class);
+        Intent in = new Intent(this, connexionActivity.class);
         startActivity(in);
     }
     public void NavigateForgetMyPassword(View v) {
