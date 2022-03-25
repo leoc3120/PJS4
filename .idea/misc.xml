@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PJS4/app/src/main/res/layout/activity_connexion.xml" value="0.26145833333333335" />
+        <entry key="..\:/PJS4/app/src/main/res/layout/activity_home.xml" value="0.1816123188405797" />
+        <entry key="..\:/PJS4/app/src/main/res/layout/activity_search.xml" value="0.144" />
+        <entry key="..\:/PJS4/app/src/main/res/layout/activity_settings.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_connexion.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_home.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/layout/activity_inscription.xml" value="0.26145833333333335" />
@@ -11,7 +15,6 @@
         <entry key="..\:/Users/leoch/AndroidStudioProjects/PJS4/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.178" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/drawable/ic_launcher_background.xml" value="0.178" />
-        <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_complete_profile.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_connexion.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/activity_inscription.xml" value="0.1" />
@@ -27,11 +30,15 @@
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/layout/fragment_second.xml" value="0.1875" />
         <entry key="..\:/Users/rh4/Documents/GitHub/new/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2453125" />
         <entry key="..\:/Users/snekh/Documents/GitHub/PJS4/app/src/main/res/layout/activity_main.xml" value="0.14375" />
+        <entry key="app/src/main/res/layout/activity_complete_profile.xml" value="0.2105438232421875" />
         <entry key="app/src/main/res/layout/activity_connexion.xml" value="0.19671325683593752" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.18778381347656253" />
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.23291778564453125" />
-        <entry key="app/src/main/res/layout/activity_mot_de_passe_oublie.xml" value="0.31632080078125" />
+        <entry key="app/src/main/res/layout/activity_mot_de_passe_oublie.xml" value="0.2563323974609375" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.248577880859375" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.19439697265625" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.175" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>
