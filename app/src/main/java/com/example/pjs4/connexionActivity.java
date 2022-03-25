@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+
 import java.util.HashMap;
 
 public class connexionActivity extends AppCompatActivity {
@@ -40,7 +42,6 @@ public class connexionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_connexion);
-        Button connexion = findViewById(R.id.btnConnexion);
 
         TextView noAccount = findViewById(R.id.notamember);
         TextView forgotPassword = findViewById(R.id.forgetyourpassword);
@@ -50,11 +51,8 @@ public class connexionActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+        
 
-        connexion.setOnClickListener(v -> {
-            Intent homeActivityIntent = new Intent(connexionActivity.this, completeProfileActivity.class);
-            startActivity(homeActivityIntent);
-        });
 
         noAccount.setOnClickListener(v -> {
             Intent noAcc = new Intent(this, inscriptionActivity.class);

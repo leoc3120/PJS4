@@ -1,12 +1,10 @@
 package com.example.pjs4;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 
 public class homeActivity extends AppCompatActivity {
 
@@ -16,6 +14,9 @@ public class homeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         NavigationBarView nav = findViewById(R.id.bottom_navigation);
+        LinearProgressIndicator caloriesBar = findViewById(R.id.caloriesBar);
+
+        //caloriesBar.setProgress(70);
         nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -46,11 +47,5 @@ public class homeActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
-
-
-
-
     }
 }
