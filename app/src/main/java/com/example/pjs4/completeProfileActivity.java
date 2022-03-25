@@ -76,7 +76,7 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
             finish();
             startActivity(new Intent(getApplicationContext(),connexionActivity.class));
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         editTextName = (EditText)findViewById(R.id.EditTextName);
         editTextSurname = (EditText)findViewById(R.id.EditTextSurname);
         editTextPhoneNo = (EditText)findViewById(R.id.EditTextPhoneNo);
