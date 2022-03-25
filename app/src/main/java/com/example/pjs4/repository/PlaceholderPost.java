@@ -1,5 +1,11 @@
 package com.example.pjs4.repository;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -8,24 +14,38 @@ import java.io.IOException;
 
 public class PlaceholderPost {
 
-    public String connexion(){
+    public void connexion(){
         OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
-                .url("https://edamam-recipe-search.p.rapidapi.com/search")
-                .get()
-                .addHeader("X-RapidAPI-Host", "edamam-recipe-search.p.rapidapi.com")
-                .addHeader("X-RapidAPI-Key", "54e4bb803cmshb6228af55f580c7p1e45f1jsn6123d794c6bc")
-                .build();
+        Thread thread = new Thread(new Runnable() {
 
-        Response response = null;
-        try {
-            response = client.newCall(request).execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            Request request = new Request.Builder()
+                    .url("https://edamam-recipe-search.p.rapidapi.com/search?q=chicken")
+                    .get()
+                    .addHeader("X-RapidAPI-Host", "edamam-recipe-search.p.rapidapi.com")
+                    .addHeader("X-RapidAPI-Key", "7eb892f52bmsh3efccf80bdf39f1p1c2708jsn5628d01eca98")
+                    .build();
 
-        return response.toString();
+
+            @Override
+            public void run() {
+                try  {
+                    Response response = null;
+                    response = client.newCall(request).execute();
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    JsonParser jp = new JsonParser();
+                    JsonElement je = jp.parse(response.body().string());
+                    String prettyJsonString = gson.toJson(je);
+                    Log.d("app", prettyJsonString);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+
     }
 
 }

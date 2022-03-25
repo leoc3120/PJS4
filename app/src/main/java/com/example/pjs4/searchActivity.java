@@ -27,7 +27,7 @@ public class searchActivity extends AppCompatActivity {
             public void onClick(View v) {
                 access.connexion();
                 final TextView mTextView = (TextView) findViewById(R.id.texte2);
-                mTextView.setText(access.connexion());
+
             }
         });
     }
