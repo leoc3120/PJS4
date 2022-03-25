@@ -22,13 +22,23 @@
     <string name="continuer">Continuer</string>
     <string name="d_connexion">Déconnexion</string>
     <string name="create_profile">create_profile</string>
-    <string name="Username">Username</string>
-    <string name="enter_your_name">enter_your_name</string>
-    <string name="Usersurname">Usersurname</string>
+    <string name="Username">Nom de l\'utilisateur</string>
+    <string name="enter_your_name">Entrez votre nom</string>
+    <string name="Usersurname">Nom de l\'utilisateur</string>
     <string name="enter_your_surname">enter_your_surname</string>
     <string name="phone_number">phone_number</string>
     <string name="enter_your_phone_number">enter_your_phone_number</string>
     <string name="e_mail">e_mail</string>
     <string name="email_address">email_address</string>
     <string name="ok">ok</string>
+    <string name="enter_your_height">Enter votre Taille</string>
+    <string name="UserHeight">Votre taille</string>
+    <string name="UserWeight">Votre poids</string>
+    <string name="enter_your_weight">Entrez votre poids</string>
+    <string name="enter_your_sex">Entrez votre sexe</string>
+    <string name="UserSex">Votre Sexe</string>
+    <string name="enter_your_birth">Entrez votre date de naissance</string>
+    <string name="UserBirth">Votre date de naissance</string>
+    <string name="UserCountry">Votre pays</string>
+    <string name="enter_your_country">Entrez votre pays</string>
 </resources>
