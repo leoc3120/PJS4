@@ -2,6 +2,7 @@ package com.example.pjs4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -35,6 +36,7 @@ public class searchActivity extends AppCompatActivity {
 
                 final EditText entree = (EditText) findViewById(R.id.entree);
 
+                // essayer d'ajouter i ici
                 access.connexion(label, diet, img, btn, entree);
                // mTextView.setText(access.);
             }

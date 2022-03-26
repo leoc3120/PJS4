@@ -8,13 +8,16 @@ import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pjs4.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -26,6 +29,8 @@ import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,39 +70,36 @@ public class PlaceholderPost extends AppCompatActivity {
 
                     for (int i = 0; i < jr.length(); i++) {
                         idList.add(jr.getJSONObject(i));
-                        for (int y = 0; y < idList.size(); y++) {
-                             arrayy = Arrays.asList(idList.get(i).toString().split(","));
-                            Log.d("TAG0", arrayy.get(i));
-                            label.setText(arrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
-                            diet.setText(arrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
-
-                           /* Thread thread = new Thread(new Runnable() {
-
-                                @Override
-                                public void run() {
-                                    btn.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            String url = "https://www.techantena.com/tutorial/";
-
-                                            Uri uri = Uri.parse(url);
-                                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                                            startActivity(intent);
-                                        }
-                                    });
-                                }
-                            });*/
-
-                            URL url = new URL(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/"));
-                            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-
-                            PlaceholderPost.this.runOnUiThread(new Runnable() {
-                                public void run() {
-                                    img.setImageBitmap(bmp);
-                                }
-                            });
-                        }
                     }
+
+                    arrayy = Arrays.asList(idList.get(0).toString().split(","));
+                   // Log.d("TAG0", arrayy.get(i));
+                    label.setText(arrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
+                    diet.setText(arrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
+
+                    btn.setOnClickListener(new View.OnClickListener() {
+                        int i = 1;
+                        @Override
+                        public void onClick(View view) {
+
+                            List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
+
+                            label.setText(newarrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
+                            diet.setText(newarrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
+
+
+                            i++;
+                        }
+                    });
+
+                    /*URL url = new URL(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/"));
+                    Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+
+                    PlaceholderPost.this.runOnUiThread(new Runnable() {
+                        public void run() {
+                            img.setImageBitmap(bmp);
+                        }
+                    });*/
 
                 } catch (Exception e) {
                     e.printStackTrace();
