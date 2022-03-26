@@ -1,6 +1,19 @@
 package com.example.pjs4.repository;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.text.Editable;
 import android.util.Log;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,18 +26,21 @@ import com.squareup.okhttp.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class PlaceholderPost {
+public class PlaceholderPost extends AppCompatActivity {
 
-    public void connexion(){
+    public void connexion(TextView label, TextView diet, ImageView img, Button btn, EditText entree){
         OkHttpClient client = new OkHttpClient();
         ArrayList<JSONObject> idList = new ArrayList<JSONObject>();
+
         Thread thread = new Thread(new Runnable() {
 
             Request request = new Request.Builder()
-                    .url("https://edamam-recipe-search.p.rapidapi.com/search?q=chicken")
+                    .url("https://edamam-recipe-search.p.rapidapi.com/search?q=" + entree.getEditableText())
                     .get()
                     .addHeader("X-RapidAPI-Host", "edamam-recipe-search.p.rapidapi.com")
                     .addHeader("X-RapidAPI-Key", "7eb892f52bmsh3efccf80bdf39f1p1c2708jsn5628d01eca98")
@@ -33,6 +49,7 @@ public class PlaceholderPost {
 
             @Override
             public void run() {
+                List<String> arrayy;
                 try  {
                     Response response = null;
                     response = client.newCall(request).execute();
@@ -43,31 +60,53 @@ public class PlaceholderPost {
                     String prettyJsonString = gson.toJson(je);
 
                     JSONObject jsonArray = new JSONObject(prettyJsonString);
-
-                    //JSONObject jb = new JSONObject(response);
                     JSONArray jr = jsonArray.getJSONArray("hits");
 
-                    //JSONObject myResponse = new JSONObject(prettyJsonString);
-                    //JSONArray jsonArr = (JSONArray) myResponse.get("hits");
-                    //JSONArray requiredValues = jsonArr.getJSONArray(0);
-                    //String[] values = new String[requiredValues.length()];
 
                     for (int i = 0; i < jr.length(); i++) {
                         idList.add(jr.getJSONObject(i));
-                        Log.d("TAG", idList.get(i).toString());
-                    }
-                    Log.d("TAG0", idList.get(0).toString());
+                        for (int y = 0; y < idList.size(); y++) {
+                             arrayy = Arrays.asList(idList.get(i).toString().split(","));
+                            Log.d("TAG0", arrayy.get(i));
+                            label.setText(arrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
+                            diet.setText(arrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
 
-                   // Log.d("app", prettyJsonString);
+                           /* Thread thread = new Thread(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    btn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            String url = "https://www.techantena.com/tutorial/";
+
+                                            Uri uri = Uri.parse(url);
+                                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                }
+                            });*/
+
+                            URL url = new URL(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/"));
+                            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+
+                            PlaceholderPost.this.runOnUiThread(new Runnable() {
+                                public void run() {
+                                    img.setImageBitmap(bmp);
+                                }
+                            });
+                        }
+                    }
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+
         });
 
         thread.start();
-
     }
 
 }
