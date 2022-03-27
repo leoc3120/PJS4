@@ -25,6 +25,7 @@ import com.google.gson.JsonParser;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,10 +39,9 @@ import java.util.List;
 
 public class PlaceholderPost extends AppCompatActivity {
 
-    public void connexion(TextView label, TextView diet, ImageView img, Button btn, EditText entree){
+    public void connexion(TextView label, TextView diet, ImageView img, Button btn, EditText entree, Button site){
         OkHttpClient client = new OkHttpClient();
         ArrayList<JSONObject> idList = new ArrayList<JSONObject>();
-
         Thread thread = new Thread(new Runnable() {
 
             Request request = new Request.Builder()
@@ -55,6 +55,7 @@ public class PlaceholderPost extends AppCompatActivity {
             @Override
             public void run() {
                 List<String> arrayy;
+                String url2 = null;
                 try  {
                     Response response = null;
                     response = client.newCall(request).execute();
@@ -73,33 +74,55 @@ public class PlaceholderPost extends AppCompatActivity {
                     }
 
                     arrayy = Arrays.asList(idList.get(0).toString().split(","));
-                   // Log.d("TAG0", arrayy.get(i));
+                    //Log.d("TAG0", arrayy.get(4));
+                    //Picasso.get().load(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/")).into(img);
+
                     label.setText(arrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
                     diet.setText(arrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
 
-                    btn.setOnClickListener(new View.OnClickListener() {
-                        int i = 1;
-                        @Override
-                        public void onClick(View view) {
-
-                            List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
-
-                            label.setText(newarrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
-                            diet.setText(newarrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
-
-
-                            i++;
-                        }
-                    });
-
-                    /*URL url = new URL(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/"));
+                    URL url = new URL(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/"));
                     Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
                     PlaceholderPost.this.runOnUiThread(new Runnable() {
                         public void run() {
                             img.setImageBitmap(bmp);
                         }
-                    });*/
+                    });
+
+                    site.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(arrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/")));
+                            Log.d("TAG0", arrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/"));
+                            startActivity(intent);
+                        }
+                    });
+
+                    btn.setOnClickListener(new View.OnClickListener() {
+                        int i = 1;
+                        @Override
+                        public void onClick(View view) {
+
+                                List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
+
+                            //while(i < newarrayy.size()) {
+                            Picasso.get().load(newarrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/")).into(img);
+                            label.setText(newarrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
+                            diet.setText(newarrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
+                            i++;
+
+                            site.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/")));
+                                    Log.d("TAG0", newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/"));
+                                    startActivity(intent);
+                                }
+                            });
+                           // }
+                        }
+                    });
+
 
                 } catch (Exception e) {
                     e.printStackTrace();

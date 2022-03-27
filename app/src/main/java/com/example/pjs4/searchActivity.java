@@ -33,11 +33,12 @@ public class searchActivity extends AppCompatActivity {
                 final TextView diet = (TextView) findViewById(R.id.diet);
                 final ImageView img = (ImageView) findViewById(R.id.imgRecette);
                 final Button btn = (Button) findViewById(R.id.ouvrir);
+                final Button site = (Button) findViewById(R.id.GoSite);
 
                 final EditText entree = (EditText) findViewById(R.id.entree);
 
                 // essayer d'ajouter i ici
-                access.connexion(label, diet, img, btn, entree);
+                access.connexion(label, diet, img, btn, entree, site);
                // mTextView.setText(access.);
             }
         });
