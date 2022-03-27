@@ -44,8 +44,11 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
     private TextView textViewemailname;
     private DatabaseReference databaseReference;
     private EditText editTextName;
-    private EditText editTextSurname;
-    private EditText editTextPhoneNo;
+    private EditText editTextHeight;
+    private EditText editTextWeight;
+    private EditText editTextSex;
+    private EditText editTextBirth;
+    private EditText editTextCountry;
     private ImageView profileImageView;
     private FirebaseStorage firebaseStorage;
     private static int PICK_IMAGE = 123;
@@ -76,10 +79,13 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
             finish();
             startActivity(new Intent(getApplicationContext(),connexionActivity.class));
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         editTextName = (EditText)findViewById(R.id.EditTextName);
-        editTextSurname = (EditText)findViewById(R.id.EditTextSurname);
-        editTextPhoneNo = (EditText)findViewById(R.id.EditTextPhoneNo);
+        editTextHeight = (EditText)findViewById(R.id.EditTextHeight);
+        editTextWeight = (EditText)findViewById(R.id.EditTextWeight);
+        editTextSex = (EditText)findViewById(R.id.EditTextSex);
+        editTextBirth = (EditText)findViewById(R.id.EditTextBirth);
+        editTextCountry = (EditText)findViewById(R.id.EditTextCountry);
         btnsave=(Button)findViewById(R.id.btnSaveButton);
         FirebaseUser user=firebaseAuth.getCurrentUser();
         btnsave.setOnClickListener(this);
@@ -100,10 +106,13 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
         });
     }
     private void userInformation(){
-        String name = editTextName.getText().toString().trim();
-        String surname = editTextSurname.getText().toString().trim();
-        String phoneno = editTextPhoneNo.getText().toString().trim();
-        Userinformation userinformation = new Userinformation(name,surname,phoneno);
+        String Name = editTextName.getText().toString().trim();
+        String Height = editTextHeight.getText().toString().trim();
+        String Weight = editTextWeight.getText().toString().trim();
+        String Sex = editTextSex.getText().toString().trim();
+        String Birth = editTextBirth.getText().toString().trim();
+        String Country = editTextCountry.getText().toString().trim();
+        Userinformation userinformation = new Userinformation(Name,Height,Weight,Sex,Birth,Country);
         FirebaseUser user = firebaseAuth.getCurrentUser();
         databaseReference.child(user.getUid()).setValue(userinformation);
         Toast.makeText(getApplicationContext(),"User information updated",Toast.LENGTH_LONG).show();

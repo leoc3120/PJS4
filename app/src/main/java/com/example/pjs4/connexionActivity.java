@@ -50,7 +50,7 @@ public class connexionActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        
+
 
         connexion.setOnClickListener(v -> {
             Intent homeActivityIntent = new Intent(connexionActivity.this, homeActivity.class);
@@ -72,6 +72,7 @@ public class connexionActivity extends AppCompatActivity {
                 PerforLogin();
             }
         });
+
 
     }
 
