@@ -11,13 +11,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.pjs4.repository.PlaceholderPost;
+import com.example.pjs4.repository.APILoader;
 
 public class searchActivity extends AppCompatActivity {
 
     Button boutonR;
 
-    PlaceholderPost access = new PlaceholderPost();
+    APILoader access = new APILoader();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

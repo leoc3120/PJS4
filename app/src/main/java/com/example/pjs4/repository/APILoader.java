@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PlaceholderPost extends AppCompatActivity {
+public class APILoader extends AppCompatActivity {
 
     public void connexion(TextView label, TextView diet, ImageView img, Button btn, EditText entree, Button site){
         OkHttpClient client = new OkHttpClient();
@@ -83,7 +83,7 @@ public class PlaceholderPost extends AppCompatActivity {
                     URL url = new URL(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/"));
                     Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
-                    PlaceholderPost.this.runOnUiThread(new Runnable() {
+                    APILoader.this.runOnUiThread(new Runnable() {
                         public void run() {
                             img.setImageBitmap(bmp);
                         }
