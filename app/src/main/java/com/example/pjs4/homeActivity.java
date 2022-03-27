@@ -11,6 +11,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.AuthResult;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 
 public class homeActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class homeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //NavigationBarView nav = findViewById(R.id.bottom_navigation);
+        NavigationBarView nav = findViewById(R.id.bottom_navigation);
 
         OnCompleteListener<AuthResult> completeListener = new OnCompleteListener<AuthResult>() {
             @Override
@@ -32,9 +33,10 @@ public class homeActivity extends AppCompatActivity {
             }
         };
 
+        LinearProgressIndicator caloriesBar = findViewById(R.id.caloriesBar);
+        caloriesBar.setProgress(70);
 
-        //caloriesBar.setProgress(70);
-        /*nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 int id = item.getItemId();
@@ -63,40 +65,6 @@ public class homeActivity extends AppCompatActivity {
                 }
                 return true;
             }
-        });*/
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.btn1:
-                                Intent startActivityIntent = new Intent(homeActivity.this, homeActivity.class);
-                                startActivity(startActivityIntent);
-                                break;
-
-                            case R.id.btn2:
-                                Intent searchActivityIntent = new Intent(homeActivity.this, searchActivity.class);
-                                startActivity(searchActivityIntent);
-                                break;
-
-                            case R.id.btn3:
-                                Intent profileActivityIntent = new Intent(homeActivity.this, profileActivity.class);
-                                startActivity(profileActivityIntent);
-                                break;
-
-                            case R.id.btn4:
-                                Intent settingsActivityIntent = new Intent(homeActivity.this, settingsActivity.class);
-                                startActivity(settingsActivityIntent);
-                                break;
-                            default :
-                                break;
-                        }
-                        return true;
-                    }
-                });
-
+        });
     }
 }
