@@ -14,6 +14,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class settingsActivity extends AppCompatActivity {
@@ -32,17 +34,13 @@ public class settingsActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        //signIn.setText((int) mUser.getMetadata().getLastSignInTimestamp());
-        int hours   = (int) ((mUser.getMetadata().getLastSignInTimestamp() / (1000*60*60)) % 24);
 
-        int data = (int) mUser.getMetadata().getLastSignInTimestamp();
-        long days = TimeUnit.MILLISECONDS.toDays(data);
-        data -= TimeUnit.DAYS.toMillis(days);
-        System.out.println(days);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String dateString = formatter.format(new Date(mUser.getMetadata().getLastSignInTimestamp()));
+        System.out.println(dateString);
+        signIn.setText(dateString);
         System.out.println(mUser.getMetadata().getLastSignInTimestamp());
-        Log.d("data", ((String.valueOf(mUser.getMetadata().getLastSignInTimestamp()))));
-        System.out.println(TimeUnit.MILLISECONDS.toDays(mUser.getMetadata().getLastSignInTimestamp()));
-
 
         /*NavigationBarView nav = findViewById(R.id.bottom_navigation);
         nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
