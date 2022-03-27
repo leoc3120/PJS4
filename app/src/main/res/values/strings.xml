@@ -41,4 +41,5 @@
     <string name="UserBirth">Votre date de naissance</string>
     <string name="UserCountry">Votre pays</string>
     <string name="enter_your_country">Entrez votre pays</string>
+    <string name="MapApiKey">AIzaSyD540ftjlvGvoR45z4PKZ6WrV1bnoo-9Kg</string>
 </resources>

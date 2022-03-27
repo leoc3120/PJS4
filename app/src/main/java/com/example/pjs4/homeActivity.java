@@ -8,12 +8,19 @@ import android.view.MenuItem;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 
-public class homeActivity extends AppCompatActivity {
+//map dependencies
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+
+public class homeActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,11 @@ public class homeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         NavigationBarView nav = findViewById(R.id.bottom_navigation);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
 
         OnCompleteListener<AuthResult> completeListener = new OnCompleteListener<AuthResult>() {
             @Override
@@ -67,4 +79,10 @@ public class homeActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0)).title("Mark"));
+    }
+
 }
