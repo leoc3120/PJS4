@@ -1,24 +1,30 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/btn1"
         android:enabled="true"
         android:icon="@drawable/home"
-        android:title="@string/navHome"/>
+        android:title="@string/navHome"
+        app:showAsAction = "ifRoom"/>
 
     <item
         android:id="@+id/btn2"
         android:enabled="true"
         android:icon="@drawable/search"
-        android:title="@string/navSearch"/>
+        android:title="@string/navSearch"
+        app:showAsAction = "ifRoom"/>
     <item
         android:id="@+id/btn3"
         android:enabled="true"
         android:icon="@drawable/user"
-        android:title="@string/navProfil"/>
+        android:title="@string/navProfil"
+        app:showAsAction = "ifRoom"/>
     <item
         android:id="@+id/btn4"
         android:enabled="true"
         android:icon="@drawable/settings"
-        android:title="@string/navSettings"/>
+        android:title="@string/navSettings"
+        app:showAsAction = "ifRoom"/>
 
 </menu>

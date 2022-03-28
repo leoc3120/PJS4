@@ -1,11 +1,26 @@
 package com.example.pjs4;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
-import com.google.android.material.navigation.NavigationBarView;
 
-public class homeActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.AuthResult;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
+
+//map dependencies
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+
+public class homeActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +29,25 @@ public class homeActivity extends AppCompatActivity {
 
         NavigationBarView nav = findViewById(R.id.bottom_navigation);
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
-        //caloriesBar.setProgress(70);
+
+        OnCompleteListener<AuthResult> completeListener = new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    boolean isNew = task.getResult().getAdditionalUserInfo().isNewUser();
+                    System.out.println(isNew);
+                    Log.d("MyTAG", "onComplete: " + (isNew ? "new user" : "old user"));
+                }
+            }
+        };
+
+        LinearProgressIndicator caloriesBar = findViewById(R.id.caloriesBar);
+        caloriesBar.setProgress(70);
+
         nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -47,4 +79,10 @@ public class homeActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0)).title("Mark"));
+    }
+
 }
