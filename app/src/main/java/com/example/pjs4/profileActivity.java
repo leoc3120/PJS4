@@ -1,12 +1,22 @@
 package com.example.pjs4;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -248,6 +258,11 @@ public class profileActivity  extends AppCompatActivity {
     public void navigateLogOut(View v) {
         FirebaseAuth.getInstance().signOut();
         Intent inent = new Intent(this, startActivity.class);
+        startActivity(inent);
+    }
+
+    public void navigateBack(View v){
+        Intent inent = new Intent(this, settingsActivity.class);
         startActivity(inent);
     }
 
