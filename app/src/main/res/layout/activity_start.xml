@@ -14,7 +14,12 @@
         android:contentDescription="@string/sports"
         tools:ignore="ImageContrastCheck"
         android:src="@drawable/imagehome" />
-
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/SignInButton"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="100dp"/>
     <Button
         android:id="@+id/buttonConnect"
         style="?attr/materialButtonOutlinedStyle"
