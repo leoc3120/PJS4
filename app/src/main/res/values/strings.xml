@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PJS4</string>
+    <string name="app_name">EasyFit</string>
     <string name="button_send" />
     <string name="connexion_invitation"><b>Connexion à l\'application</b></string>
     <string name="email_input">Entre ici ton mail</string>

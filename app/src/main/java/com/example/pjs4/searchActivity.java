@@ -37,9 +37,8 @@ public class searchActivity extends AppCompatActivity {
 
                 final EditText entree = (EditText) findViewById(R.id.entree);
 
-                // essayer d'ajouter i ici
+
                 access.connexion(label, diet, img, btn, entree, site);
-               // mTextView.setText(access.);
             }
         });
     }
