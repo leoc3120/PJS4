@@ -45,4 +45,10 @@
     <string name="log_out">Déconnexion</string>
     <string name="name">Name</string>
     <string name="MapApiKey" />
+    <string name="Modifier">Modifier mon profil</string>
+    <string name="Partager">Partager</string>
+    <string name="Problème">Signaler un problème</string>
+    <string name="contact">Nous contacter</string>
+    <string name="Deconnexion">Déconnexion</string>
+    <string name="lastsign">Dernière connexion</string>
 </resources>

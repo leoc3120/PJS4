@@ -108,12 +108,12 @@ public class profileActivity  extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog_edit_name, null);
         final EditText etUsername = alertLayout.findViewById(R.id.et_username);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Name Edit");
+        alert.setTitle("Modifier le nom");
         // this is set the view from XML inside AlertDialog
         alert.setView(alertLayout);
         // disallow cancel of AlertDialog on click of back button and outside touch
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
@@ -143,12 +143,12 @@ public class profileActivity  extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog_edit_height, null);
         final EditText etUserHeight = alertLayout.findViewById(R.id.et_userHeight);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Height Edit");
+        alert.setTitle("Modifier la taille");
         // this is set the view from XML inside AlertDialog
         alert.setView(alertLayout);
         // disallow cancel of AlertDialog on click of back button and outside touch
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
@@ -179,12 +179,12 @@ public class profileActivity  extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog_edit_weight, null);
         final EditText etUserWeight = alertLayout.findViewById(R.id.et_userWeight);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Weight Edit");
+        alert.setTitle("Modifier le poids");
         // this is set the view from XML inside AlertDialog
         alert.setView(alertLayout);
         // disallow cancel of AlertDialog on click of back button and outside touch
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
@@ -214,12 +214,12 @@ public class profileActivity  extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog_edit_sex, null);
         final EditText etUserSex = alertLayout.findViewById(R.id.et_userSex);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Sex Edit");
+        alert.setTitle("Modifier le sexe");
         // this is set the view from XML inside AlertDialog
         alert.setView(alertLayout);
         // disallow cancel of AlertDialog on click of back button and outside touch
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
@@ -249,12 +249,12 @@ public class profileActivity  extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog_edit_birth, null);
         final EditText etUserBirth = alertLayout.findViewById(R.id.et_userBirth);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Birth Edit");
+        alert.setTitle("Modifier la date de naissance ");
         // this is set the view from XML inside AlertDialog
         alert.setView(alertLayout);
         // disallow cancel of AlertDialog on click of back button and outside touch
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
@@ -284,12 +284,12 @@ public class profileActivity  extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog_edit_country, null);
         final EditText etUserCountry = alertLayout.findViewById(R.id.et_userCountry);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Country Edit");
+        alert.setTitle("Modifier le pays");
         // this is set the view from XML inside AlertDialog
         alert.setView(alertLayout);
         // disallow cancel of AlertDialog on click of back button and outside touch
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }

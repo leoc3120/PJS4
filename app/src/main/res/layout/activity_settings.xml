@@ -1,195 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".settingsActivity">
+    android:layout_height="match_parent">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/button_back"
+                android:layout_width="73dp"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/back"
+                android:backgroundTint="@color/white" />
 
-    <TextView
-        android:id="@+id/DecoBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/d_connexion"
-        android:onClick="navigateLogOut"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
+            <TextView
+                android:id="@+id/paramètres"
+                android:layout_width="match_parent"
+                android:layout_height="93dp"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center_horizontal"
+                android:text="Paramètres"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0A21B5"
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/PartageBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Partager"
-        app:layout_constraintBottom_toTopOf="@+id/ProbBtn"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintHorizontal_bias="0.341"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:gravity="center_horizontal"
+                android:text="@string/Username"
+                android:textColor="@color/black"
+                android:textSize="35dp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/ContactBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nous contacter"
-        app:layout_constraintBottom_toTopOf="@+id/DecoBtn"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintHorizontal_bias="0.347"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
+            <TextView
+                android:id="@+id/lastSignIn"
+                android:layout_width="376dp"
+                android:layout_height="51dp"
+                android:gravity="right"
+                android:text="@string/lastsign"
+                android:textSize="15dp" />
 
-    <TextView
-        android:id="@+id/ModifBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
-        android:text="Modifier"
-        app:layout_constraintBottom_toTopOf="@+id/PartageBtn"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.314"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <ImageView
+                    android:id="@+id/imageViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="5dp"/>
 
-    <TextView
-        android:id="@+id/ProbBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Signaler un problème"
-        app:layout_constraintBottom_toTopOf="@+id/ContactBtn"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.347"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
+                <TextView
+                    android:id="@+id/modifier"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/Modifier"
+                    android:textColor="@color/black"
+                    android:onClick="navigateToProfil"
+                    android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="108dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094"
-        tools:srcCompat="@tools:sample/avatars" />
+                <Button
+                    android:id="@+id/buttonEditName"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="67dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@+id/profile_name_textView"
+                    android:drawableRight="@drawable/account2"
+                    android:onClick="buttonClickedEditName" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <ImageView
+                    android:id="@+id/imageViewHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="5dp"/>
 
-    <TextView
-        android:id="@+id/lastSignInText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dernière connexion :"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.639"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181" />
+                <TextView
+                    android:id="@+id/Partager"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/Partager"
+                    android:textColor="@color/black"
+                    android:onClick="navigateToShare"
+                    android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/lastSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last signIn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181" />
+                <Button
+                    android:id="@+id/buttonEditHeight"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="67dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@+id/profile_name_textView"
+                    android:drawableRight="@drawable/share"
+                    android:onClick="buttonClickedEditHeight" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <ImageView
+                    android:id="@+id/imageViewWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="5dp"/>
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/lastSignIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+                <TextView
+                    android:id="@+id/Signaler_problème"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/Problème"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="33dp"
-        android:layout_height="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+                <Button
+                    android:id="@+id/buttonEditWeight"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="68dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@+id/profile_name_textView"
+                    android:drawableRight="@drawable/pb"
+                    android:onClick="buttonClickedEditWeight" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <ImageView
+                    android:id="@+id/imageViewSex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="5dp"/>
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="36dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901"
-        app:srcCompat="@android:drawable/ic_menu_share" />
+                <TextView
+                    android:id="@+id/contact"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/contact"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="39dp"
-        android:layout_height="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
-        app:srcCompat="@android:drawable/ic_dialog_alert" />
+                <Button
+                    android:id="@+id/buttonEditSex"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@+id/profile_name_textView"
+                    android:drawableRight="@drawable/contact"
+                    android:onClick="buttonClickedEditSex" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+                <ImageView
+                    android:id="@+id/imageViewBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="5dp"/>
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="36dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927"
-        app:srcCompat="@android:drawable/stat_notify_chat" />
+                <TextView
+                    android:id="@+id/Deconnexion"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/Deconnexion"
+                    android:onClick="navigateLogOut"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
+                <Button
+                    android:id="@+id/buttonEditBirth"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@+id/profile_name_textView"
+                    android:drawableRight="@drawable/logout"
+                    android:onClick="buttonClickedEditBirth" />
+            </TableRow>
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71"
-        app:srcCompat="@android:drawable/ic_lock_power_off" />
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id = "@+id/bottom_navigation"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_alignParentBottom = "true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:itemBackground = "@color/orange"
-        app:itemIconTint="#fff"
-        app:itemTextColor="#fff"
-        app:menu = "@menu/bottom_navigation_menu"
-        tools:ignore="MissingConstraints" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_gravity="center_vertical|center_horizontal" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
