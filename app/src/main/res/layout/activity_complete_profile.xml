@@ -14,10 +14,12 @@
             app:toolbarId="@+id/toolbar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="?attr/colorPrimary">
+
             <ImageView
                 android:id="@+id/update_imageView"
                 android:layout_width="match_parent"
-                android:layout_height="182dp"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/rounded_fg"
                 android:gravity="center_vertical"
                 android:src="@drawable/defavatar"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,15 +48,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/create_profile"
-                android:textColor="@color/purple_500"
+                android:text="Mon profil"
+                android:textColor="#050371"
                 android:textAppearance="?android:attr/textAppearanceLarge"/>
             <TextView
                 android:id="@+id/TextViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Username"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
             <EditText
                 android:id="@+id/EditTextName"
                 android:layout_width="match_parent"
@@ -67,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UserHeight"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
 
             <EditText
                 android:id="@+id/EditTextHeight"
@@ -81,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UserWeight"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
 
             <EditText
                 android:id="@+id/EditTextWeight"
@@ -96,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UserSex"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
 
             <EditText
                 android:id="@+id/EditTextSex"
@@ -111,7 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UserBirth"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
 
             <EditText
                 android:id="@+id/EditTextBirth"
@@ -126,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UserCountry"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
 
             <EditText
                 android:id="@+id/EditTextCountry"
@@ -155,22 +157,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e_mail"
-                android:textColor="@color/purple_500"/>
+                android:textColor="#0A21B5"/>
             <TextView
                 android:id="@+id/textViewEmailAdress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="@string/email_address"
-                android:textColor="@color/purple_500"/>
+                />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/ok"
                 android:id="@+id/btnSaveButton"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/nav_menu_header_bg"
-                android:textColor="@color/black"/>
+                android:backgroundTint="#C6FF5722"
+                />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

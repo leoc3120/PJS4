@@ -1,6 +1,4 @@
 package com.example.pjs4;
-
-
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,11 +17,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -79,7 +75,7 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
             finish();
             startActivity(new Intent(getApplicationContext(),connexionActivity.class));
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         editTextName = (EditText)findViewById(R.id.EditTextName);
         editTextHeight = (EditText)findViewById(R.id.EditTextHeight);
         editTextWeight = (EditText)findViewById(R.id.EditTextWeight);
@@ -87,7 +83,7 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
         editTextBirth = (EditText)findViewById(R.id.EditTextBirth);
         editTextCountry = (EditText)findViewById(R.id.EditTextCountry);
         btnsave=(Button)findViewById(R.id.btnSaveButton);
-        FirebaseUser user=firebaseAuth.getCurrentUser();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
         btnsave.setOnClickListener(this);
         textViewemailname=(TextView)findViewById(R.id.textViewEmailAdress);
         textViewemailname.setText(user.getEmail());
