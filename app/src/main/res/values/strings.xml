@@ -41,4 +41,8 @@
     <string name="UserBirth">Votre date de naissance</string>
     <string name="UserCountry">Votre pays</string>
     <string name="enter_your_country">Entrez votre pays</string>
+    <string name="profile">Profil</string>
+    <string name="log_out">Déconnexion</string>
+    <string name="name">Name</string>
+    <string name="MapApiKey" />
 </resources>
