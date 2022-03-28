@@ -113,6 +113,7 @@ public class completeProfileActivity extends AppCompatActivity implements View.O
         databaseReference.child(user.getUid()).setValue(userinformation);
         Toast.makeText(getApplicationContext(),"User information updated",Toast.LENGTH_LONG).show();
     }
+
     @Override
     public void onClick(View view) {
         if (view==btnsave){

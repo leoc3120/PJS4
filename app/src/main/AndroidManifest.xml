@@ -57,6 +57,9 @@
             android:name=".completeProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".contactActivity"
+            android:exported="false" />
+        <activity
             android:name=".startActivity"
             android:exported="true" >
             <intent-filter>

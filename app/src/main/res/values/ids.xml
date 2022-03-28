@@ -11,4 +11,13 @@
     <item name="textView11" type="id" />
     <item name="textView10" type="id" />
     <item name="textView26" type="id" />
+    <item name="edit_text_to" type="id" />
+    <item name="edit_text_subject" type="id" />
+    <item name="edit_text_message" type="id" />
+    <item name="button_send" type="id" />
+    <item name="paramètres" type="id" />
+    <item name="modifier" type="id" />
+    <item name="contact" type="id" />
+    <item name="ratingBar" type="id" />
+    <item name="Deconnexion" type="id" />
 </resources>

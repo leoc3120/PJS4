@@ -114,6 +114,13 @@ public class settingsActivity extends AppCompatActivity {
 
     }
 
+
+    public void navigateContactPage(View v){
+        Intent inent = new Intent(this, contactActivity.class);
+        startActivity(inent);
+    }
+
+
     public void navigateLogOut(View v){
         FirebaseAuth.getInstance().signOut();
         Intent inent = new Intent(this, startActivity.class);
