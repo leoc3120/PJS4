@@ -44,12 +44,14 @@ mGoogleApiClient = new GoogleApiClient.Builder(this)
 
         SignInButton connexion = findViewById(R.id.SignInButton);
         connexion.setOnClickListener(this);
+
+        Button btnConnexion = findViewById(R.id.buttonConnect);
         Button inscription = findViewById(R.id.buttonCreateAccount);
 
-      /*  connexion.setOnClickListener(v -> {
+        btnConnexion.setOnClickListener(v -> {
             Intent connexionActivityIntent = new Intent(startActivity.this, connexionActivity.class);
             startActivity(connexionActivityIntent);
-        });*/
+        });
 
         inscription.setOnClickListener(v -> {
             Intent inscriptionActivityIntent = new Intent(startActivity.this, inscriptionActivity.class);
