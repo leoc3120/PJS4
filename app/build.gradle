@@ -8,6 +8,7 @@ plugins {
 apply plugin: 'com.google.gms.google-services'
 android {
     compileSdk 32
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.pjs4"

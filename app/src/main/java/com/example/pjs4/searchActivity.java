@@ -3,6 +3,8 @@ package com.example.pjs4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -34,11 +36,20 @@ public class searchActivity extends AppCompatActivity {
                 final ImageView img = (ImageView) findViewById(R.id.imgRecette);
                 final Button btn = (Button) findViewById(R.id.ouvrir);
                 final Button site = (Button) findViewById(R.id.GoSite);
-
+                final TextView url = (TextView) findViewById(R.id.url);
                 final EditText entree = (EditText) findViewById(R.id.entree);
 
 
-                access.connexion(label, diet, img, btn, entree, site);
+                access.connexion(label, diet, img, btn, entree, site, url);
+
+                site.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String lien = url.getText().toString();
+                        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(lien));
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
