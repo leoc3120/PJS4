@@ -44,12 +44,20 @@ public class searchActivity extends AppCompatActivity {
                 final ImageView img = (ImageView) findViewById(R.id.imgRecette);
                 final Button btn = (Button) findViewById(R.id.ouvrir);
                 final Button site = (Button) findViewById(R.id.GoSite);
-
+                final TextView url = (TextView) findViewById(R.id.url);
                 final EditText entree = (EditText) findViewById(R.id.entree);
 
-                // essayer d'ajouter i ici
-                access.connexion(label, diet, img, btn, entree, site);
-               // mTextView.setText(access.);
+
+                access.connexion(label, diet, img, btn, entree, site, url);
+
+                site.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String lien = url.getText().toString();
+                        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(lien));
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }

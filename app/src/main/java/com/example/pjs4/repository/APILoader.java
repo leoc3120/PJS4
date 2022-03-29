@@ -4,20 +4,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.text.Editable;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pjs4.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -30,8 +24,6 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,9 +31,9 @@ import java.util.List;
 
 public class APILoader extends AppCompatActivity {
 
-    public void connexion(TextView label, TextView diet, ImageView img, Button btn, EditText entree, Button site){
+    public void connexion(TextView label, TextView diet, ImageView img, Button button, EditText entree, Button site, TextView urlLien){
         OkHttpClient client = new OkHttpClient();
-        ArrayList<JSONObject> idList = new ArrayList<JSONObject>();
+        ArrayList<JSONObject> idList = new ArrayList<>();
         Thread thread = new Thread(new Runnable() {
 
             Request request = new Request.Builder()
@@ -55,7 +47,6 @@ public class APILoader extends AppCompatActivity {
             @Override
             public void run() {
                 List<String> arrayy;
-                String url2 = null;
                 try  {
                     Response response = null;
                     response = client.newCall(request).execute();
@@ -74,8 +65,6 @@ public class APILoader extends AppCompatActivity {
                     }
 
                     arrayy = Arrays.asList(idList.get(0).toString().split(","));
-                    //Log.d("TAG0", arrayy.get(4));
-                    //Picasso.get().load(arrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/")).into(img);
 
                     label.setText(arrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
                     diet.setText(arrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
@@ -89,39 +78,28 @@ public class APILoader extends AppCompatActivity {
                         }
                     });
 
-                    site.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(arrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/")));
-                            Log.d("TAG0", arrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/"));
-                            startActivity(intent);
-                        }
-                    });
+                    String mylink = arrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/");
+                    urlLien.setText(mylink);
 
-                    btn.setOnClickListener(new View.OnClickListener() {
+
+                    button.setOnClickListener(new View.OnClickListener() {
                         int i = 1;
                         @Override
                         public void onClick(View view) {
 
-                                List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
+                            List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
 
                             //while(i < newarrayy.size()) {
                             Picasso.get().load(newarrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/")).into(img);
                             label.setText(newarrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
                             diet.setText(newarrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
-                            i++;
+                            String mylink = newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/");
+                            urlLien.setText(mylink);
 
-                            site.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/")));
-                                    Log.d("TAG0", newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/"));
-                                    startActivity(intent);
-                                }
-                            });
-                           // }
+                            i++;
                         }
                     });
+
 
 
                 } catch (Exception e) {

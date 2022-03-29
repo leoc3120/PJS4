@@ -141,4 +141,16 @@
         app:layout_constraintTop_toBottomOf="@+id/ouvrir"
         app:layout_constraintVertical_bias="0.261" />
 
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="234dp"
+        android:visibility="invisible"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diet" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
