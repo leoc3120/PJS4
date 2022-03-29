@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtEmail"
+            android:hint="Your email..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/purple_200"
+            android:textColorHint="@color/purple_200"
+            android:textSize="20sp"
+            android:fontFamily="monospace"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/black"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/purple_200"
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtName"
+            android:hint="Your name..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/purple_200"
+            android:textColorHint="@color/purple_200"
+            android:textSize="20sp"
+            android:fontFamily="monospace"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/black"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/purple_200"
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtFeedback"
+            android:hint="Your feedback..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/purple_200"
+            android:textColorHint="@color/purple_200"
+            android:textSize="20sp"
+            android:fontFamily="monospace"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/black"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/purple_200"
+            />
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

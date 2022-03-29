@@ -1,12 +1,17 @@
 package com.example.pjs4;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -69,7 +75,7 @@ public class settingsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Userinformation userProfile = dataSnapshot.getValue(Userinformation.class);
-                Name.setText(userProfile.getUserName());;
+                Name.setText(userProfile.getUserName());
             }
 
             @Override
@@ -136,6 +142,78 @@ public class settingsActivity extends AppCompatActivity {
         Intent inent = new Intent(this, profileActivity.class);
         startActivity(inent);
     }
+
+    public void showDialog(View v){
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Signaler un probleme");
+        dialog.setMessage("Donnez-nous votre avis");
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        View reg_layout = inflater.inflate(R.layout.activity_feedback, null);
+        final MaterialEditText edtEmail = reg_layout.findViewById(R.id.edtEmail);
+        final MaterialEditText edtName = reg_layout.findViewById(R.id.edtName);
+        final MaterialEditText edtFeedback = reg_layout.findViewById(R.id.edtFeedback);
+
+        dialog.setView(reg_layout);
+
+        // set
+
+        dialog.setPositiveButton("SEND", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if(TextUtils.isEmpty(edtEmail.getText().toString())) {
+                    Toast.makeText(settingsActivity.this, "Veuillez taper votre email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(edtName.getText().toString())) {
+                    Toast.makeText(settingsActivity.this, "Veuillez taper votre nom", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(edtFeedback.getText().toString())) {
+                    Toast.makeText(settingsActivity.this, "le champ commentaire ne peut pas être vide", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+                DatabaseReference myRef = database.getReference("Feedback");
+
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Object value = snapshot.getValue();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(settingsActivity.this, "Failed to read value", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                myRef.child(user.getUid()).setValue(edtName.getText().toString());
+                myRef.child(user.getUid()).child(edtName.getText().toString()).setValue(edtFeedback.getText().toString());
+
+                //myRef.child(user.getUid()).setValue(edtName.getText().toString());
+                //myRef.child(user.getUid()).setValue(edtFeedback.getText().toString());
+
+                Toast.makeText(settingsActivity.this, "Merci pour votre commentaire", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        dialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        dialog.show();
+
+    }
+
     public void navigateToShare(View v){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);

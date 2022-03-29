@@ -3,6 +3,7 @@ package com.example.pjs4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -18,13 +19,22 @@ public class searchActivity extends AppCompatActivity {
     Button boutonR;
 
     APILoader access = new APILoader();
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        back = findViewById(R.id.button_back);
 
         boutonR = findViewById(R.id.boutonR);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateBack(v);
+            }
+        });
 
         boutonR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +52,10 @@ public class searchActivity extends AppCompatActivity {
                // mTextView.setText(access.);
             }
         });
+    }
+
+    public void navigateBack(View v){
+        Intent inent = new Intent(this, homeActivity.class);
+        startActivity(inent);
     }
 }

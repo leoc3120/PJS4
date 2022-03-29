@@ -54,7 +54,7 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 int id = item.getItemId();
                 switch(id){
                     case R.id.btn1:
-                        Intent startActivityIntent = new Intent(homeActivity.this, startActivity.class);
+                        Intent startActivityIntent = new Intent(homeActivity.this, homeActivity.class);
                         startActivity(startActivityIntent);
                         break;
 

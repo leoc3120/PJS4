@@ -144,6 +144,7 @@
                     android:layout_marginBottom="1dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/Problème"
+                    android:onClick="showDialog"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
