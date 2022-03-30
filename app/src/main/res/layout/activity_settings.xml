@@ -13,24 +13,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <Button
-                android:id="@+id/button_back"
-                android:layout_width="73dp"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/back"
-                android:backgroundTint="@color/white" />
-
-            <TextView
-                android:id="@+id/paramètres"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="93dp"
-                android:fontFamily="sans-serif-thin"
-                android:gravity="center_horizontal"
-                android:text="Paramètres"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#0A21B5"
-                android:textSize="35sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/button_back"
+                    android:layout_width="73dp"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/back"
+                    android:backgroundTint="@color/white" />
+
+                <TextView
+                    android:id="@+id/paramètres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="Paramètres"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#0A21B5"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
                 android:id="@+id/name"
@@ -47,7 +58,7 @@
                 android:id="@+id/lastSignIn"
                 android:layout_width="376dp"
                 android:layout_height="51dp"
-                android:gravity="right"
+                android:gravity="center_horizontal"
                 android:text="@string/lastsign"
                 android:textSize="15dp" />
 
@@ -232,11 +243,16 @@
                     android:onClick="buttonClickedEditBirth" />
             </TableRow>
 
+            <TextView
+                android:layout_marginTop="45dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notez l'application"
+                android:gravity="center_horizontal"/>
             <RatingBar
                 android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
                 android:layout_gravity="center_vertical|center_horizontal" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
