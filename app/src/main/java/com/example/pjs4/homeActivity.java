@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
     Button buttonDecrement;
     ProgressBar progressBar;
     TextView textView;
+    CheckBox handisport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,10 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
         buttonIncrement = (Button) findViewById(R.id.button_incr);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         textView = (TextView) findViewById(R.id.text_view_progress);
+        handisport = (CheckBox) findViewById(R.id.simpleCheckBox);
 
         NavigationBarView nav = findViewById(R.id.bottom_navigation);
+
 
         // when clicked on buttonIncrement progress in increased by 10%
         buttonIncrement.setOnClickListener(new View.OnClickListener() {
