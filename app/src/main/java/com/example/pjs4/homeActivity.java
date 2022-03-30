@@ -54,8 +54,8 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View v) {
                 // if progress is less than or equal
                 // to 90% then only it can be increased
-                if (progress <= 90) {
-                    progress += 10;
+                if (progress <= 2600) {
+                    progress += 100;
                     updateProgressBar();
                 }
             }
@@ -67,8 +67,8 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View v) {
                 // If progress is greater than
                 // 10% then only it can be decreased
-                if (progress >= 10) {
-                    progress -= 10;
+                if (progress >= 100) {
+                    progress -= 100;
                     updateProgressBar();
                 }
             }
