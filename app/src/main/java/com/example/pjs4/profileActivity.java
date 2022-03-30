@@ -1,8 +1,10 @@
 package com.example.pjs4;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -11,8 +13,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,7 +29,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
 
 public class profileActivity  extends AppCompatActivity {
 
@@ -31,18 +40,34 @@ public class profileActivity  extends AppCompatActivity {
     private TextView profileNameTextView, profileHeightTextView, profileWeightTextView, profileSexTextView, profileBirthTextView, profileCountryTextView;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-    private ImageView profilePicImageView;
+    private ImageView profileImageView;
     private FirebaseStorage firebaseStorage;
     Button btnBack;
     private TextView textViewemailname;
     private EditText editTextName;
+    private static int PICK_IMAGE = 123;
+    Uri imagePath;
+    private StorageReference storageReference;
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
+            imagePath = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
+                profileImageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         databaseReference = FirebaseDatabase.getInstance().getReference();
         editTextName = (EditText)findViewById(R.id.et_username);
-        profilePicImageView = findViewById(R.id.update_imageView);
+        profileImageView = findViewById(R.id.update_imageView);
         profileNameTextView = findViewById(R.id.profile_name_textView);
         profileHeightTextView = findViewById(R.id.profile_height_textView);
         profileWeightTextView = findViewById(R.id.profile_weight_textView);
@@ -62,7 +87,7 @@ public class profileActivity  extends AppCompatActivity {
                 // Using "Picasso" (http://square.github.io/picasso/) after adding the dependency in the Gradle.
                 // ".fit().centerInside()" fits the entire image into the specified area.
                 // Finally, add "READ" and "WRITE" external storage permissions in the Manifest.
-                Picasso.get().load(uri).fit().centerInside().into(profilePicImageView);
+                Picasso.get().load(uri).fit().centerInside().into(profileImageView);
             }
         });
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +118,34 @@ public class profileActivity  extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(profileActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        profileImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profileIntent = new Intent();
+                profileIntent.setType("image/*");
+                profileIntent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(profileIntent, "Select Image."), PICK_IMAGE);
+            }
+        });
+    }
+    private void sendUserData() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        // Get "User UID" from Firebase > Authentification > Users.
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic"); //User id/Images/Profile Pic.jpg
+        UploadTask uploadTask = imageReference.putFile(imagePath);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(profileActivity.this, "Error: Uploading profile picture", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(profileActivity.this, "Profile picture uploaded", Toast.LENGTH_SHORT).show();
             }
         });
     }
