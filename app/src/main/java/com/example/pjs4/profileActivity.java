@@ -367,14 +367,4 @@ public class profileActivity  extends AppCompatActivity {
         dialog.show();
     }
 
-    public void navigateLogOut(View v) {
-        FirebaseAuth.getInstance().signOut();
-        Intent inent = new Intent(this, startActivity.class);
-        startActivity(inent);
-    }
-
-
-
-
-
 }
