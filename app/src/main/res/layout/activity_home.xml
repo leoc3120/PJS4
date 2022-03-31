@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,6 +12,7 @@
         android:id="@+id/texte2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="#F3EFEF"
         android:fontFamily="cursive"
         android:gravity="center"
@@ -20,6 +21,8 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CarteCalories"
+        app:layout_constraintTop_toBottomOf="@+id/texte2"
         android:layout_width="match_parent"
         android:layout_height="283dp"
         android:background="#B7EA7D"
@@ -59,27 +62,36 @@
             app:layout_constraintTop_toTopOf="@+id/progress_bar"
             tools:text="60%" />
 
-        <!--Increment button that will decrement the progress by 10%-->
+        <!--Button that will decrement the progress by 10%-->
         <Button
             android:id="@+id/button_decr"
             android:layout_width="75dp"
             android:layout_height="51dp"
             android:text="- 100 kcal"
-            app:layout_constraintStart_toStartOf="@+id/progress_bar"
+            app:layout_constraintEnd_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
-        <!--Increment button that will increment the progress by 10%-->
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="75dp"
+            android:layout_height="51dp"
+            android:text="reset"
+            app:layout_constraintRight_toRightOf="@id/progress_bar"
+            app:layout_constraintLeft_toLeftOf="@id/progress_bar"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar"/>
+        <!--Button that will increment the progress by 10%-->
         <Button
             android:id="@+id/button_incr"
             android:layout_width="75dp"
             android:layout_height="51dp"
             android:text="+ 100 kcal"
-            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+            app:layout_constraintStart_toEndOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.card.MaterialCardView
+        app:layout_constraintTop_toBottomOf="@+id/CarteCalories"
         android:id="@+id/cardMap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -150,4 +162,4 @@
         app:menu="@menu/bottom_navigation_menu"
         tools:ignore="MissingConstraints" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

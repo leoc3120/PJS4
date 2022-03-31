@@ -34,6 +34,7 @@ public class homeActivity extends AppCompatActivity {
     private int progress = 0;
     Button buttonIncrement;
     Button buttonDecrement;
+    Button buttonReset;
     ProgressBar progressBar;
     TextView textView;
     CheckBox handisport;
@@ -47,6 +48,7 @@ public class homeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         buttonDecrement = (Button) findViewById(R.id.button_decr);
         buttonIncrement = (Button) findViewById(R.id.button_incr);
+        buttonReset = findViewById(R.id.button_reset);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         textView = (TextView) findViewById(R.id.text_view_progress);
         handisport = (CheckBox) findViewById(R.id.simpleCheckBox);
@@ -58,7 +60,7 @@ public class homeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("\"https://www.google.com/maps/search/salle+de+sport\"");
+                sb.append("google.navigation:q=salle+de+sport");
                 if (handisport.isChecked()) {
                     sb.append("+handicap");
                 }
@@ -109,7 +111,13 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
-
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progress=0;
+                updateProgressBar();
+            }
+        });
         OnCompleteListener<AuthResult> completeListener = new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
