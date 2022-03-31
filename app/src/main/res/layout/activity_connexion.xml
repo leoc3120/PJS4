@@ -87,6 +87,7 @@
         android:layout_height="379dp"
         app:srcCompat="@drawable/logoo"
         tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="-5dp" />
+        tools:layout_editor_absoluteY="-5dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
