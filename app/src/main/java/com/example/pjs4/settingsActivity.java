@@ -198,11 +198,8 @@ public class settingsActivity extends AppCompatActivity {
 
                 myRef.child(user.getUid()).setValue(edtName.getText().toString());
                 myRef.child(user.getUid()).child(edtName.getText().toString()).setValue(edtEmail.getText().toString());
-                myRef.child(user.getUid()).child(edtName.getText().toString()).setValue(edtFeedback.getText().toString());
+                //myRef.child(user.getUid()).child(edtName.getText().toString()).setValue(edtFeedback.getText().toString());
 
-
-                //myRef.child(user.getUid()).setValue(edtName.getText().toString());
-                //myRef.child(user.getUid()).setValue(edtFeedback.getText().toString());
 
                 Toast.makeText(settingsActivity.this, "Merci pour votre commentaire", Toast.LENGTH_SHORT).show();
 
