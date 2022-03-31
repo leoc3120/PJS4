@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +45,9 @@ public class settingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Remove title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_settings);
         signIn=findViewById(R.id.lastSignIn);
         back = findViewById(R.id.button_back);
@@ -193,7 +197,9 @@ public class settingsActivity extends AppCompatActivity {
                 });
 
                 myRef.child(user.getUid()).setValue(edtName.getText().toString());
+                myRef.child(user.getUid()).child(edtName.getText().toString()).setValue(edtEmail.getText().toString());
                 myRef.child(user.getUid()).child(edtName.getText().toString()).setValue(edtFeedback.getText().toString());
+
 
                 //myRef.child(user.getUid()).setValue(edtName.getText().toString());
                 //myRef.child(user.getUid()).setValue(edtFeedback.getText().toString());

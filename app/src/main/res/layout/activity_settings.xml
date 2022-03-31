@@ -244,16 +244,23 @@
             </TableRow>
 
             <TextView
-                android:layout_marginTop="45dp"
+                android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Notez l'application"
-                android:gravity="center_horizontal"/>
+                android:fontFamily="cursive"
+                android:gravity="center_horizontal"
+                android:text="@string/notez_notre_application"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"/>
+
             <RatingBar
                 android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal" />
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
