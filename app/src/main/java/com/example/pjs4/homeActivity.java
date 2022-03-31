@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -33,6 +34,7 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
     Button buttonDecrement;
     ProgressBar progressBar;
     TextView textView;
+    CheckBox handisport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,10 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
         buttonIncrement = (Button) findViewById(R.id.button_incr);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         textView = (TextView) findViewById(R.id.text_view_progress);
+        handisport = (CheckBox) findViewById(R.id.simpleCheckBox);
 
         NavigationBarView nav = findViewById(R.id.bottom_navigation);
+
 
         // when clicked on buttonIncrement progress in increased by 10%
         buttonIncrement.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +58,8 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View v) {
                 // if progress is less than or equal
                 // to 90% then only it can be increased
-                if (progress <= 90) {
-                    progress += 10;
+                if (progress <= 2600) {
+                    progress += 100;
                     updateProgressBar();
                 }
             }
@@ -67,8 +71,8 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View v) {
                 // If progress is greater than
                 // 10% then only it can be decreased
-                if (progress >= 10) {
-                    progress -= 10;
+                if (progress >= 100) {
+                    progress -= 100;
                     updateProgressBar();
                 }
             }

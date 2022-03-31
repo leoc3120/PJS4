@@ -62,18 +62,18 @@
         <!--Increment button that will decrement the progress by 10%-->
         <Button
             android:id="@+id/button_decr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="- 10 cal"
+            android:layout_width="75dp"
+            android:layout_height="51dp"
+            android:text="- 100 kcal"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
         <!--Increment button that will increment the progress by 10%-->
         <Button
             android:id="@+id/button_incr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+ 10 cal"
+            android:layout_width="75dp"
+            android:layout_height="51dp"
+            android:text="+ 100 kcal"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
@@ -89,7 +89,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="233dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -108,7 +108,7 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/map_icon" />
             </LinearLayout>
@@ -117,7 +117,17 @@
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="199dp" />
+                android:layout_height="164dp">
+
+            </androidx.fragment.app.FragmentContainerView>
+
+            <CheckBox
+                android:id="@+id/simpleCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/handisport" />
+
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
