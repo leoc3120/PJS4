@@ -21,7 +21,7 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="268dp"
         android:autofillHints="login"
         android:hint="@string/email_input"
         android:inputType="textEmailAddress"
@@ -93,20 +93,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="102dp"
-        app:menu="@menu/bottom_navigation_menu"
-
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="169dp"
         android:layout_height="437dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logoo"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="-63dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-63dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
