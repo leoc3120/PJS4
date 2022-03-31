@@ -8,74 +8,28 @@
 
     <Button
         android:id="@+id/button_back"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="79dp"
+        android:layout_height="66dp"
         android:layout_marginEnd="89dp"
         android:backgroundTint="@color/white"
+        android:contentDescription="bouton back"
         android:drawableRight="@drawable/back"
-        app:layout_constraintEnd_toStartOf="@+id/Titre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/imgRecette"
         android:layout_width="300dp"
         android:layout_height="143dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="244dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-    <TextView
-        android:id="@+id/label"
-        android:layout_width="250dp"
-        android:layout_height="18dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.987"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
-        app:layout_constraintVertical_bias="0.136" />
-
-    <TextView
-        android:id="@+id/LblNomRecette"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nom : "
-        app:layout_constraintBottom_toTopOf="@+id/LblAvantage"
-        app:layout_constraintEnd_toStartOf="@+id/label"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
-        app:layout_constraintVertical_bias="0.666" />
-
-    <TextView
-        android:id="@+id/LblAvantage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Avantage : "
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toStartOf="@+id/diet"
-        app:layout_constraintHorizontal_bias="0.603"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
-        app:layout_constraintVertical_bias="0.09" />
-
-    <TextView
-        android:id="@+id/diet"
-        android:layout_width="251dp"
-        android:layout_height="17dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.993"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label"
-        app:layout_constraintVertical_bias="0.109" />
 
     <Button
         android:id="@+id/boutonR"
@@ -87,19 +41,70 @@
         app:layout_constraintHorizontal_bias="0.393"
         app:layout_constraintStart_toEndOf="@+id/entree"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <TextView
-        android:id="@+id/Titre"
-        android:layout_width="86dp"
-        android:layout_height="31dp"
-        android:text="Recettes"
-        app:layout_constraintBottom_toTopOf="@+id/imgRecette"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:id="@+id/LblAvantage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Avantage : "
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toStartOf="@+id/diet"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <Button
+        android:id="@+id/GoSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:text="Voir la recette"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
+        app:layout_constraintVertical_bias="0.261" />
+
+    <Button
+        android:id="@+id/ouvrir"
+        android:layout_width="49dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/white"
+        android:text="--"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.997"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boutonR" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="250dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="48dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/LblNomRecette"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom : "
+        app:layout_constraintBottom_toTopOf="@+id/LblAvantage"
+        app:layout_constraintEnd_toStartOf="@+id/label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRecette"
+        app:layout_constraintVertical_bias="0.688" />
 
     <EditText
         android:id="@+id/entree"
@@ -116,44 +121,59 @@
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.539" />
 
     <Button
-        android:id="@+id/GoSite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Voir la recette"
+        android:id="@+id/prec"
+        android:layout_width="54dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/white"
+        android:text="--"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/ouvrir"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entree" />
+
+    <TextView
+        android:id="@+id/diet"
+        android:layout_width="251dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ouvrir"
-        app:layout_constraintVertical_bias="0.261" />
+        app:layout_constraintTop_toBottomOf="@+id/label"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_width="247dp"
+        android:layout_height="40dp"
+        android:text="Recherchez une recette"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgRecette"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
 
     <TextView
         android:id="@+id/url"
         android:layout_width="234dp"
         android:layout_height="18dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="212dp"
         android:text="TextView"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diet" />
-
-    <Button
-        android:id="@+id/ouvrir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Suivant"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diet"
-        app:layout_constraintVertical_bias="0.37" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

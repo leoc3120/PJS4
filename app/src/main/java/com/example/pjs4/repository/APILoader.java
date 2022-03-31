@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pjs4.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -31,7 +33,7 @@ import java.util.List;
 
 public class APILoader extends AppCompatActivity {
 
-    public void connexion(TextView label, TextView diet, ImageView img, Button button, EditText entree, Button site, TextView urlLien){
+    public void connexion(TextView label, TextView diet, ImageView img, Button button, EditText entree, Button site, TextView urlLien, Button prec){
         OkHttpClient client = new OkHttpClient();
         ArrayList<JSONObject> idList = new ArrayList<>();
         Thread thread = new Thread(new Runnable() {
@@ -90,13 +92,35 @@ public class APILoader extends AppCompatActivity {
                             List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
 
                             //while(i < newarrayy.size()) {
+                            Log.d("val + i", String.valueOf(i));
                             Picasso.get().load(newarrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/")).into(img);
                             label.setText(newarrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
                             diet.setText(newarrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
                             String mylink = newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/");
                             urlLien.setText(mylink);
-
                             i++;
+                            if (prec.isPressed()){
+                                i--;
+                            }
+
+                        }
+
+                    });
+
+                    prec.setOnClickListener(new View.OnClickListener() {
+                        int i = 1;
+                        @Override
+                        public void onClick(View view) {
+                            List<String> newarrayy = Arrays.asList(idList.get(i).toString().split(","));
+
+                            //while(i < newarrayy.size()) {
+                            Log.d("val + i", String.valueOf(i));
+                            Picasso.get().load(newarrayy.get(2).replace("\"image\":\"", "").replace("\"", "").replace("\\/", "/")).into(img);
+                            label.setText(newarrayy.get(1).replace("\"label\":", "").replace("\"", "").replace("\"", ""));
+                            diet.setText(newarrayy.get(7).replace("\"dietLabels\":[", "").replace("]", "").replace("\"", "").replace("\"", ""));
+                            String mylink = newarrayy.get(4).replace("\"url\":", "").replace("\"", "").replace("\\/", "/");
+                            urlLien.setText(mylink);
+                            i--;
                         }
                     });
 
