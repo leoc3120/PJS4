@@ -1,6 +1,7 @@
 package com.example.pjs4;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +29,7 @@ import com.google.firebase.auth.AuthResult;
 //map dependencies
 
 
-public class homeActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class homeActivity extends AppCompatActivity {
 
     private int progress = 0;
     Button buttonIncrement;
@@ -49,9 +51,38 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
         textView = (TextView) findViewById(R.id.text_view_progress);
         handisport = (CheckBox) findViewById(R.id.simpleCheckBox);
 
+        Button btnSearchMaps = findViewById(R.id.btnSearchMap);
         NavigationBarView nav = findViewById(R.id.bottom_navigation);
 
+        btnSearchMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("\"https://www.google.com/maps/search/salle+de+sport\"");
+                if (handisport.isChecked()) {
+                    sb.append("+handicap");
+                }
+                String query = sb.toString();
 
+                try {
+                    // Create a Uri from an intent string. Use the result to create an Intent.
+                    Uri gmmIntentUri = Uri.parse(query);
+                    // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    // Make the Intent explicit by setting the Google Maps package
+                    mapIntent.setPackage("com.google.android.apps.maps");
+
+                    // Attempt to start an activity that can handle the Intent
+                    startActivity(mapIntent);
+                }
+
+                catch (android.content.ActivityNotFoundException e) {
+                    Toast.makeText(homeActivity.this, "Impossible de lancer Google Maps", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
         // when clicked on buttonIncrement progress in increased by 10%
         buttonIncrement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,10 +108,6 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
 
         OnCompleteListener<AuthResult> completeListener = new OnCompleteListener<AuthResult>() {
@@ -125,11 +152,6 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return true;
             }
         });
-    }
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(0, 0)).title("Mark"));
     }
 
     // updateProgressBar() method sets

@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/map_icon" />
             </LinearLayout>
-
+            <!--
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -120,14 +120,20 @@
                 android:layout_height="164dp">
 
             </androidx.fragment.app.FragmentContainerView>
-
+            -->
             <CheckBox
                 android:id="@+id/simpleCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/handisport" />
 
-
+            <Button
+                android:id="@+id/btnSearchMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Rechercher sur Google Maps"/>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -135,7 +141,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/orange"
         app:itemIconTint="#fff"
