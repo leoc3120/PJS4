@@ -49,9 +49,10 @@ public class searchActivity extends AppCompatActivity {
                 final Button site = (Button) findViewById(R.id.GoSite);
                 final TextView url = (TextView) findViewById(R.id.url);
                 final EditText entree = (EditText) findViewById(R.id.entree);
+                final Button prec = (Button) findViewById(R.id.prec);
 
 
-                access.connexion(label, diet, img, btn, entree, site, url);
+                access.connexion(label, diet, img, btn, entree, site, url, prec);
 
                 site.setOnClickListener(new View.OnClickListener() {
                     @Override
