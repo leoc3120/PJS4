@@ -1,6 +1,10 @@
 package com.example.pjs4;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,12 +19,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationBarView;
@@ -59,8 +61,27 @@ public class homeActivity extends AppCompatActivity {
         btnSearchMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                try {
+                    if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                        ActivityCompat.requestPermissions(homeActivity.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+                    }
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+                Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if (location == null) {
+                    Toast.makeText(homeActivity.this, "Impossible d'accéder à la géolocalisation", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                double longitude = location.getLongitude();
+
+                double latitude = location.getLatitude();
                 StringBuilder sb = new StringBuilder();
-                sb.append("google.navigation:q=salle+de+sport");
+                sb.append("geo:");
+                sb.append(latitude+",");
+                sb.append(longitude+"?");
+                sb.append("z=10&q=salle+de+sport");
                 if (handisport.isChecked()) {
                     sb.append("+handicap");
                 }
