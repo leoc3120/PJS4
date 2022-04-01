@@ -73,7 +73,7 @@
 
         <Button
             android:id="@+id/button_reset"
-            android:layout_width="75dp"
+            android:layout_width="90dp"
             android:layout_height="51dp"
             android:text="reset"
             app:layout_constraintRight_toRightOf="@id/progress_bar"
